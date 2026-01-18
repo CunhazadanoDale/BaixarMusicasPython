@@ -16,7 +16,15 @@ def baixar_playlist_mp3(url_playlist):
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',   # Converte a musica/video para MP3
             'preferredquality': '192', # Bitrate de 192kbps - parece que é padrao e qualidade decente
-        }],
+        },
+
+        {
+                # força CBR em vez de VBR
+                'key': 'FFmpegMetadata',
+            }
+        ],
+
+        'restrictfilenames': True,
         # Onde salvar (na pasta destino) e o nome do arquivo quando salvo (preferencia titulo da música)
         'outtmpl': f'{pasta_destino}/%(title)s.%(ext)s',
         'ignoreerrors': True, # Se der erro em um video, pula para o proximo para nao travar a execução

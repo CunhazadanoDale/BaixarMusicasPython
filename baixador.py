@@ -44,3 +44,4 @@ def baixar_playlist_mp3(url_playlist):
 if __name__ == "__main__":
     url = input("Cole a URL da playlist do YouTube aqui: ")
     baixar_playlist_mp3(url)
+    
